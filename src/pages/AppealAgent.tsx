@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 // 去除图标时间线实现，改为单列直线时间线
 
 const AppealAgent: React.FC = () => {

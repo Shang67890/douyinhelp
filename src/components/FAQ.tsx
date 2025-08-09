@@ -1,7 +1,7 @@
-import React from 'react';
+import type { FC } from 'react';
 import { HelpCircle } from 'lucide-react';
 
-const FAQ: React.FC = () => {
+const FAQ: FC = () => {
   const faqs = [
     {
       q: '评估结果的准确性如何？',

@@ -1,7 +1,7 @@
-import React from 'react';
+import type { FC } from 'react';
 import { Shield, Zap } from 'lucide-react';
 
-const Header: React.FC = () => {
+const Header: FC = () => {
   return (
     <header className="bg-gradient-to-r from-indigo-900 via-purple-800 to-indigo-900 text-white py-6 px-4 shadow-lg">
       <div className="max-w-4xl mx-auto">

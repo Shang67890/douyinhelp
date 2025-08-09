@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { AccountInfo } from '../types';
 import { User, Clock, AlertTriangle, FileText, Users, Calendar, CheckCircle, Loader } from 'lucide-react';
 
