@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground; font-feature-settings: "rlig" 1, "calt" 1; }
+}
+
+@layer components {
+  .container { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+
+  /* 表单卡片（暗色玻璃科技风） */
+  .form-card { @apply bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 shadow-xl; }
+
+  /* 通用控件样式 */
+  .form-control {
+    @apply w-full px-4 py-3 rounded-lg bg-slate-900/60 text-slate-100 placeholder-slate-400 border border-white/10
+           focus:outline-none focus:ring-2 focus:ring-cyan-400/60 focus:border-cyan-400/60 transition-all;
+  }
+
+  /* 标签与分组标题 */
+  .field-label { @apply text-sm font-medium text-slate-200 flex items-center mb-2; }
+  .section-title { @apply text-xs uppercase tracking-wider text-slate-400 mt-2; }
+
+  /* 强调色 */
+  .accent-cyan input[type="checkbox"], .accent-cyan input[type="radio"] { accent-color: #22d3ee; }
+
+  /* 玻璃拟态卡片、霓虹阴影等（复用） */
+  .glass { @apply bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl; }
+  .neon-shadow { box-shadow: 0 8px 24px rgba(99,102,241,.25), 0 2px 8px rgba(124,58,237,.2); transition: box-shadow .3s ease, transform .3s ease; }
+  .neon-shadow-hover:hover { box-shadow: 0 16px 36px rgba(99,102,241,.35), 0 6px 18px rgba(124,58,237,.3); }
+  .hover-lift { transition: transform .25s ease, box-shadow .25s ease; }
+  .hover-lift:hover { transform: translateY(-4px) scale(1.01); }
+  .btn-glow { transition: box-shadow .25s ease, transform .2s ease; }
+  .btn-glow:hover { box-shadow: 0 10px 30px rgba(99,102,241,.35), 0 6px 16px rgba(6,182,212,.25); transform: translateY(-2px); }
+
+  /* 链接下划线与标题发光 */
+  .link-underline { position: relative; }
+  .link-underline::after { content: ""; position: absolute; left: 0; bottom: -2px; width: 0; height: 2px; background: linear-gradient(90deg,#e5e7eb 0%,#a78bfa 50%,#22d3ee 100%); transition: width .25s ease; }
+  .link-underline:hover::after { width: 100%; }
+  .text-glow { color: #fff; text-shadow: 0 2px 12px rgba(129,140,248,.55), 0 0 24px rgba(168,85,247,.35); }
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0f172a; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+/* 动画 */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
+.fade-in { animation: fadeIn .5s ease-out; }
+
+/* 渐变文字（备用） */
+.gradient-text { background: linear-gradient(135deg,#667eea 0%,#764ba2 40%,#06b6d4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+.card-hover { transition: all .3s ease; }
+.card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0,0,0,.25), 0 10px 10px -5px rgba(0,0,0,.1); }
